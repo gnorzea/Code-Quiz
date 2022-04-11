@@ -1,0 +1,14 @@
+.container {
+    margin: 25px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+}
+
