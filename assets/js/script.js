@@ -79,9 +79,10 @@ var answerCheck = document.getElementById("answerCheck");
 var shuffledQuestions = questions.sort(() => Math.random() - .5);
 var questionCountIndex = 0;
 
-var userScorePoints = 0;
-var totalTime = 81;
-var scoreResult;
+
+var totalTime = 80;
+var penalty = 10
+
 
 
 startButton.addEventListener("click", startGame);
@@ -163,7 +164,8 @@ function showQuestion() {
 
 function checkAnswer(event) {
     if (event.target.textContent === shuffledQuestions[questionCountIndex].correctAnswer) {
-        playerScore.textContent = ("Score: " + userScorePoints);
+       
+       
         answerCheck.classList.remove("hide");
         answerCheck.classList.add("text-success");
         answerCheck.textContent = "Correct!";
@@ -198,7 +200,7 @@ function gameOver() {
     welcomeText.classList.add("hide");
     summary.classList.remove("hide");
 
-    finalScore.textContent = userScorePoints
+    finalScore.textContent = totalTime
 }
 
 
