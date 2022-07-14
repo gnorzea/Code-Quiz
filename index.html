@@ -1,26 +1,82 @@
 <!DOCTYPE html>
-<html lang='en'>
-
+<html lang="en">
 <head>
-    <meta charset="UTF -8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
     <title>Code Quiz</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>View High Scores</h1>
-            <h2 id= "countdown"></h2>
-        </div>
-        <div id="start_btn"><button>Start Quiz</button></div>
-            <p id="main">words</p>
-        </div>
-    </section>
 
-    <script src="./assets/js/script.js"></script>
+    <div class="row">
+        <div class="col text-left" id="viewHighScore">
+            <button type="button" class="ml-1 btn btn-warning">View High Scores</button>
+        </div>
+        <div class="col mt-3">
+            <h3 class=" text-left hide pl-2" id="userScore">Your Score!<span id="userScorePoints"></span></h3>
+        </div>
+        <div class="text-right mr-4">
+            <h4 class="ml-1 btn btn-warning hide" id="timer">Time Left: <span class="pr-2" id="timeLeft">80</span></h4>
+        </div>
+    </div>
+    <div class="m-2 text-center justify-content-center">
+        <h1 class="font-weight-bold mt-5" id="welcomeHeader">Code Quiz!</h1>
+        <p class="pl-5 pr-5 py-3 text-center" id="welcomeText">
+             Try to answer the following code related questions within the time limit. <br> <em>Keep in mind that incorrect answers will penalize your score/time by ten seconds!</em>
+        </p>
+        <button id="start-btn" class="start-btn button text-center ml-5">Start</button>
+    </div>
 
+    <div id="container" class="">
+
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="button-grid">
+                <button class="button ans-btn" id="answerButton1">Answer 1</button>
+                <button class="button ans-btn" id="answerButton2">Answer 2</button>
+                <button class="button ans-btn" id="answerButton3">Answer 3</button>
+                <button class="button ans-btn" id="answerButton4">Answer 4</button>
+            </div>
+        </div>
+    
+        <div class="controls">
+         
+            <button id="next-btn" class="next-btn button hide">Next</button>
+            <button id="restart-btn" class="restart-btn button hide">Restart Quiz</button>
+        </div>
+    </div>
+  
+    <div class="row">
+        <h4 class="col text-center text-success my-3 hide" id="answerCheck"></h4>
+    </div>
+   
+    <div class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold" >
+        <div class="col-2"></div>
+        <div class="col-12 text-center hide" id="summary">
+            <h2 class="font-weight-bold pt-2 pb-3 m-2">Your final score is <span id="finalScore"></span>!</h2>
+            <div class="border ml-5 mr-5 pl-3 pr-3 pt-3">
+                <form class="justify-content-center">
+                    <p class="pt-2 pb-3 m-2">Enter your initials: <input id="initialInput" class="form-control pt-2 pb-3 mt-2" type="text">
+                    <button type="submit" id="submitInitialBtn" class="btn btn-warning mt-3">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div id="highScoreSection" class=" justify-content-center font-weight-bold hide col-12 text-center">
+            <h2 class="font-weight-bold ">High Scores</h2>                   
+            
+            <div id="listOfHighScores" class="list-group list-group-flush "></div>
+
+           
+            <p>
+                <button type="submit" class="btn button mt-3 mr-3" id="goBackBtn">Go Back</button>
+                <button type="submit" class="btn button mt-3" id="clearHighScoreBtn">Clear High Scores</button>
+            </p>
+            
+        </div>
+        <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
